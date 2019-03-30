@@ -1,0 +1,22 @@
+<% include header.ejs %>
+
+<header class="row-fluid text-center">
+  <h1>Menu Modular</h1>
+  <h4>Projeto Node & Express</h4>
+</header>
+
+<section class="row-fluid text-center">
+
+  <form action="/login" method="post">
+    <input type="text" name="usuario[nome]" placeholder="Digite seu nome.">
+    <br>
+    <br>
+    <input type="text" name="usuario[email]" placeholder="Digite seu e-mail.">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-success">Entrar</button>
+  </form>
+
+</section>
+
+<% include footer.ejs %>

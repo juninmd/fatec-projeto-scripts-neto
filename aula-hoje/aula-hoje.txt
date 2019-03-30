@@ -1,0 +1,13 @@
+
+
+                    <li><a href="/inicio/menubanco">Aplicação Banco de Dados</a></li>
+					
+app.get('/inicio/menubanco', controller.menubanco);
+
+-----------------
+
+	function menubanco(req, res) {
+	  res.render('inicio/frm_menubanco.ejs', {title: 'Banco Dados'});      
+	}
+					
+-----------------------------

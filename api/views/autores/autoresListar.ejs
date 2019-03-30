@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title><%= title %></title> 
+
+        <link rel="stylesheet" type="text/css" media="screen" href="./style/style_area.css" />
+
+<!-- Última versão CSS compilada e minificada -->
+
+        <style type="text/css">
+            body {background-color:gray}
+
+            #menulogin ul li { display: inline; }  
+            #menuop ul li { display: inline; }  
+
+            #menulogin {float:right;}   
+            #menuop {float: left;}       
+
+        </style>
+    </head>
+
+    <body>
+
+        <header>
+
+            <h3> Menu de Principal! </h3>
+                    
+            <section id="menulogin">
+                <ul>
+                    <li><a href="/">Início</a></li>                    
+                    <li><a href="/login">Login</a></li>                    
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/">Login Parciais</a></li>                    
+                </ul>                
+            </section>
+
+            <section id="menuop">
+                <ul>
+                    <li><a href="/formularios/menu">Formulários Bootstrap 4.1</a></li>                    
+                    
+                    <li><a href="/livros/menu">Aplicação Bando de Dados</a></li>
+                    <li><a href="/filesistem">Manipular Texto</a></li>
+                    <li><a href="/config">Configurações</a></li>                    
+                </ul>                
+            </section>
+    
+        </header>
+
+        <section id="listarautores">
+
+            <h1> Listagem de Autores </h1>
+
+            <fieldset>
+                <legend> Registros Cadastrados </legend>
+                <table border="1" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Nome</td>
+                        <td>Apelido</td>                        
+                        <td>Sexo</td>
+                        <td>Telefone</td>                                                
+                        <td>E-mail</td>
+                        <td>Dt.Cadastro</td> 
+                        <th></th>
+                        <th><a class="btn btn-success btn-block" href="/livro/views/novo">Novo</a></th>
+                    </tr>
+                    
+                    <% for(i=0; i<autores.length; i++) { %>
+                        <tr>
+                            <td> <%= autores[i].aut_codigo %> </td>
+                            <td> <%= autores[i].aut_nome %> </td>
+                            <td> <%= autores[i].aut_apelido %> </td>
+                            <td> <%= autores[i].aut_sexo %> </td>
+                            <td> <%= autores[i].aut_telefone %> </td>
+                            <td> <%= autores[i].aut_email %> </td>
+                            <td> <%= autores[i].aut_dtcadastro %> </td>
+
+                            <td><a class="btn btn-primary btn-block" href=<%="/autores/views/" + autores[i].aut_codigo%>>Editar</a></td>
+                            <td><a class="btn btn-danger btn-block" href=<%="/autores/excluir/" + autores[i].aut_codigo%>>Excluir</a> </td>
+    
+                        </tr>         
+                    <% } %>
+                    
+                </table>
+            </fieldset>
+        </section>
+
+        
+        <footer id="rodape">
+
+        </footer>
+
+    </body>
+</html>

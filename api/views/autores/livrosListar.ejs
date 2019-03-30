@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title><%= title %></title>        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Livros</title>
+    </head>
+    <body>
+
+        <!-- Nav Bar - Cabecalho -->
+        <nav>
+            <h1>
+                <a href="/">Listar Livros</a>
+            </h1>
+            <div>
+                <a href="/livrosListar">Listagem de Livros</a>
+                <a href="/livrosCadastrar">Cadastrar Novo Livro</a>
+                <a href="/livrosPesquisar">Pesquisar Livro</a>
+                <a href="/livrosAlterar">Alterar Livro</a>
+            </div>
+        </nav>
+    
+        
+        <section id="listarlivros">
+
+            <h1> Listagem de Livros </h1>
+
+            <fieldset>
+                <legend> Registros Cadastrados </legend>
+                <table border="1" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Título</td>
+                        <td>Edição</td>                        
+                        <td>ISBN</td>
+                        <td>Ano</td>                                                
+                        <td>Autor</td>
+                        <td>Editora</td> 
+                        <th></th>
+                        <th><a class="btn btn-success btn-block" href="/livro/views/novo">Novo</a></th>
+                                                                           
+<!--
+                        <td></td>
+                        <td></td>                                                
+-->
+                    </tr>
+                    
+                    <% for(i=0; i<livros.length; i++) { %>
+                        <tr>
+                            <td> <%= livros[i].liv_codigo %> </td>
+                            <td> <%= livros[i].liv_titulo %> </td>
+                            <td> <%= livros[i].liv_edicao %> </td>
+                            <td> <%= livros[i].liv_isbn %> </td>
+                            <td> <%= livros[i].liv_ano %> </td>
+                            <td> <%= livros[i].aut_apelido %> </td>
+                            <td> <%= livros[i].edt_nome %> </td>
+
+<!--                            <td> <a href="/alterar?param_liv_codigo=<%= livros[i].liv_codigo %>">alterar</a> </td>                        
+                            <td> <a href="#" onclick="excluirDados('<%= livros[i].liv_codigo %>')">excluir</a> </td>                        
+-->
+                            <td><a class="btn btn-primary btn-block" href=<%="/livro/views/" + livros[i].liv_codigo%>>Editar</a></td>
+                            <td><a class="btn btn-danger btn-block" href=<%="/livro/excluir/" + livros[i].liv_codigo%>>Excluir</a> </td>
+    
+                        </tr>         
+                    <% } %>
+                    
+                </table>
+            </fieldset>
+                    
+                     
+
+        </section>
+    
+    </body>
+</html>

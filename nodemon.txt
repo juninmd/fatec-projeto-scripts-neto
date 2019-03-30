@@ -1,0 +1,3 @@
+Para executar nodemon no windows
+
+npm run dev:start

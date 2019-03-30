@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title><%= title %></title> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row div {
+      text-align: left;
+    }
+
+    .form__label {
+      margin-right: 20px;
+      display: inline-block;
+      font-weight: 700;
+      text-align: right;
+      width: 170px;
+    }
+
+    .form__label--check {
+      margin-left: 10px;
+      display: inline-block;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .form__input {
+      display: inline-block;
+      width: auto;
+    }
+
+    .form__input--check {
+      margin-left: 194px;
+    }
+
+    .form__link {
+      margin-right: 20px;
+      text-align: right;
+      display: inline-block;
+      width: 170px;
+    }
+  </style>
+</head>
+
+<body style="padding: 20px;">
+  <h3>Cadastro de Empresas</h3>
+  <hr />
+  <form>
+    <fieldset class="form-group">
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="cep" class="form__label">CEP</label>
+          <input type="text" style="width: 25%;" placeholder="CEP" class="form-control form__input" name="cep" id="cep">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="nomedestinatario" class="form__label">Nome Destinatário</label>
+          <input type="text" style="width: 53%;" placeholder="Nome Destinatario" class="form-control form__input" name="nomedestinatario"
+            id="nomedestinatario">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="endereco" class="form__label">Endereço</label>
+          <input type="text" style="width: 60%;" placeholder="Endereço" class="form-control form__input" name="endereco" id="endereco">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="numero" class="form__label">Número</label>
+          <input type="number" style="width: 25%;" placeholder="Número" class="form-control form__input" name="numero" id="numero">
+        </div>
+      </div>
+<!--        <div class="col-md-2 offset-md-0">
+            <label for="complemento" class="form__label">Complemento</label>
+            <input type="text" style="width: 45%;" placeholder="Complemento" class="form-control form__input" name="complemento"
+              id="complemento">
+          </div>
+
+-->        
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="complemento" class="form__label">Complemento</label>
+          <input type="text" style="width: 45%;" placeholder="Complemento" class="form-control form__input" name="complemento"
+            id="complemento">
+        </div>
+      </div>
+
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="bairro" class="form__label">Bairro</label>
+          <input type="text" style="width: 45%;" placeholder="Bairro" class="form-control form__input" name="bairro" id="bairro">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="cidade" class="form__label">Cidade</label>
+          <input type="text" style="width: 45%;" placeholder="Cidade" class="form-control form__input" name="cidade" id="cidade">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="estado" class="form__label">Estado</label>
+          <input type="text" style="width: 25%;" placeholder="Estado" class="form-control form__input" name="estado" id="estado">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <label for="telefone" class="form__label">Telefone</label>
+          <input type="text" style="width: 45%;" placeholder="(DD)xxxxx-xxxx" class="form-control form__input" name="telefone"
+            id="telefone">
+        </div>
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col-md-7 offset-md-3">
+          <input class="form__input--check" type="checkbox" name="endereco2" id="endereco2">
+          <label for="endereco2" class="form__label--check">Definir este endereço como padrão para todas as
+            compras</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7 offset-md-3">
+          <a href="#" class="form__link">Cancelar</a>
+          <input type="submit" class="btn-default" value="Salvar e entregar aqui">          
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

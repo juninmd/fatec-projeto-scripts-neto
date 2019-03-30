@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title><%= title %></title>        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Livros</title>
+    </head>
+    <body>
+
+        <!-- Nav Bar - Cabecalho -->
+        <nav>
+            <h1>
+                <a href="/">Listar Livros</a>
+            </h1>
+            <div>
+                <a href="/livrosListar">Listagem de Livros</a>
+                <a href="/livrosCadastrar">Cadastrar Novo Livro</a>
+                <a href="/livrosPesquisar">Pesquisar Livro</a>
+                <a href="/livrosAlterar">Alterar Livro</a>
+            </div>
+        </nav>
+    
+        
+        <section id="listarautores">
+
+            <h1> Listagem de Autores </h1>
+
+            <fieldset>
+                <legend> Registros Cadastrados </legend>
+                <table border="1" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Nome</td>
+                        <td>Apelido</td>                        
+                        <td>Sexo</td>
+                        <td>Telefone</td>                                                
+                        <td>E-mail</td>
+                        <td>Dt.Cadastro</td> 
+                        <th></th>
+                        <th><a class="btn btn-success btn-block" href="/livro/views/novo">Novo</a></th>
+                                                                          
+                    </tr>
+                    
+                    <% for(i=0; i<autores.length; i++) { %>
+                        <tr>
+                            <td> <%= autores[i].aut_codigo %> </td>
+                            <td> <%= autores[i].aut_nome %> </td>
+                            <td> <%= autores[i].aut_apelido %> </td>
+                            <td> <%= autores[i].aut_sexo %> </td>
+                            <td> <%= autores[i].aut_telefone %> </td>
+                            <td> <%= autores[i].aut_email %> </td>
+                            <td> <%= autores[i].aut_dtcadastro %> </td>
+
+                            <td><a class="btn btn-primary btn-block" href=<%="/autores/views/" + autores[i].aut_codigo%>>Editar</a></td>
+                            <td><a class="btn btn-danger btn-block" href=<%="/autores/excluir/" + autores[i].aut_codigo%>>Excluir</a> </td>
+    
+                        </tr>         
+                    <% } %>
+                    
+                </table>
+            </fieldset>
+        </section>
+    
+    </body>
+</html>
