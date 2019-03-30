@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title><%= title %></title>        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <style type="text/css">
+            body {background-color:moccasin;}
+
+
+            #menulogin ul li { display: inline; }  
+            #menu_form ul li { display: inline; }  
+
+            #menulogin {float:right;}   
+            #menu_form {float: left;}       
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <h3>
+                Listagem de Livros
+            </h3>
+
+
+            <nav>
+                <div>
+
+                    <a href="/">Menu Inicial</a>                       
+                    <a href="/inicio/menulivros">Menu Anterior</a>   
+
+                    <a href="/livros/livrosListar">Listar Livros</a>
+                    <a href="/livros/livroscadastrar">Cadastrar Livros</a>
+                    <a href="/livros/livroseditar">Editar Livros</a>
+                    <a href="/livros/livrosinativar">Inativar Livros</a>
+
+                </div>
+            </nav>
+        </header>
+
+<br>
+<hr>
+        <section id="listarlivros">
+
+            <fieldset>
+                <legend> Registros Cadastrados </legend>
+                <table border="1" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Título</td>
+                        <td>Edição</td>                        
+                        <td>ISBN</td>
+                        <td>Ano</td>                                                
+                        <td>Autor</td>
+                        <td>Editora</td> 
+                        <th></th>
+                        <th><a class="btn btn-success btn-block" href="/livros/novo">Novo</a></th>
+                    </tr>
+                    
+                    <% for(i=0; i<livros.length; i++) { %>
+                        <tr>
+                            <td> <%= livros[i].liv_codigo %> </td>
+                            <td> <%= livros[i].liv_titulo %> </td>
+                            <td> <%= livros[i].liv_edicao %> </td>
+                            <td> <%= livros[i].liv_isbn %> </td>
+                            <td> <%= livros[i].liv_ano %> </td>
+                            <td> <%= livros[i].aut_apelido %> </td>
+                            <td> <%= livros[i].edt_nome %> </td>
+
+<!--                            <td> <a href="/alterar?param_liv_codigo=<%= livros[i].liv_codigo %>">alterar</a> </td>                        
+                            <td> <a href="#" onclick="excluirDados('<%= livros[i].liv_codigo %>')">excluir</a> </td>                        
+-->
+                            <td><a class="btn btn-primary btn-block" href=<%="/livros/editar/" + livros[i].liv_codigo%>>Editar</a></td>
+                            <td><a class="btn btn-danger btn-block" href=<%="/livros/inativar/" + livros[i].liv_codigo%>>Inativar</a> </td>
+    
+                        </tr>         
+                    <% } %>
+                    
+                </table>
+            </fieldset>
+                    
+                     
+
+        </section>
+    </div>        
+    
+    </body>
+</html>

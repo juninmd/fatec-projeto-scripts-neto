@@ -10,3 +10,4 @@ app.get('/login', controller.index);
 
 app.get('/logout', controller.logout);
 
+app.get('/inicio/menubanco', controller.menubanco);

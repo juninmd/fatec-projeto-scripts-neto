@@ -11,3 +11,31 @@ app.get('/inicio/menubanco', controller.menubanco);
 	}
 					
 -----------------------------
+
+app.get('/livros/menulivros', controller.menuLivros);
+
+----------------------------------------------
+
+	app.get('/livros/livroslistar', controller.livrosListar);
+	
+----------------
+
+	var Livros = require('../models/livros.js');
+
+-----
+	function livrosListar(req, res){
+	    Livros.listarLivros(function (err, result){
+		console.log("Listar Livros: ");
+		if(err) {
+		    throw err;
+		}
+		res.render('livros/frm_livrosListar.ejs', 
+		    {title: 'Listar Livros',
+		     livros: result});
+	    });
+	};
+
+
+-----------------
+
+	
