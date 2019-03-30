@@ -28,8 +28,7 @@ app.use(express.static('img'));
 app.set('port', 3000);
 
 consign({ cwd:  'api' })
-  .include('models')
-  .then('controllers')
+  .include('controllers')
   .then('routes')
   .into(app)
 ;
